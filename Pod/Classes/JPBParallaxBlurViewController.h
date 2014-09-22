@@ -15,4 +15,6 @@
 - (CGFloat)headerHeight;
 - (UIScrollView*)mainScrollView;
 
+- (void)updateMainScrollViewContentSize;
+
 @end

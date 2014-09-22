@@ -85,7 +85,7 @@ static CGFloat IMAGE_HEIGHT = 230.0f;
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    _mainScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame), _contentView.contentSize.height + CGRectGetHeight(_backgroundScrollView.frame));
+    [self updateMainScrollViewContentSize];
 }
 
 - (CGFloat)navBarHeight{
@@ -97,6 +97,10 @@ static CGFloat IMAGE_HEIGHT = 230.0f;
 
 - (CGFloat)offsetHeight{
     return HEADER_HEIGHT + [self navBarHeight];
+}
+
+- (void)updateMainScrollViewContentSize{
+    _mainScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame), _contentView.contentSize.height + CGRectGetHeight(_backgroundScrollView.frame));
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
