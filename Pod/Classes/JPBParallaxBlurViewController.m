@@ -28,7 +28,7 @@
 static CGFloat INVIS_DELTA = 50.0f;
 static CGFloat BLUR_DISTANCE = 200.0f;
 static CGFloat HEADER_HEIGHT = 60.0f;
-static CGFloat IMAGE_HEIGHT = 320.0f;
+static CGFloat IMAGE_HEIGHT = 230.0f;
 
 -(void)viewDidLoad{
     [super viewDidLoad];
