@@ -151,6 +151,14 @@ static CGFloat IMAGE_HEIGHT = 230.0f;
 }
 
 - (void)setHeaderImage:(UIImage*)headerImage{
+    
+    if (headerImage.size.width < headerImage.size.height && headerImage.size.width < self.view.frame.size.width) {
+        /* portrait images, width less than the view width */
+        _headerImageView.contentMode = _blurredImageView.contentMode = UIViewContentModeScaleAspectFit;
+    } else {
+        _headerImageView.contentMode = _blurredImageView.contentMode = UIViewContentModeScaleAspectFill;
+    }
+    
     _originalImageView = headerImage;
     [_headerImageView setImage:headerImage];
     [_blurredImageView setImage:[headerImage blurredImageWithRadius:40.0f iterations:4 tintColor:[UIColor clearColor]]];
